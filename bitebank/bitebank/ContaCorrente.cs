@@ -8,8 +8,8 @@ namespace bitebank
 {
     internal class ContaCorrente
     {
-        public int numero_agencia;
-        public string conta;
+        public int agencia;
+        public string conta;        
         public string titular;
         public double saldo;
 
@@ -17,6 +17,30 @@ namespace bitebank
         {
             this.saldo += valor;
         }
+
+        public bool Sacar(double valor)
+        {
+            if (valor > this.saldo)
+            {
+                return false;
+            }
+
+            this.saldo -= valor;
+            return true;
+        }
+
+        public bool Transferir(ContaCorrente contaDestino, double valor)
+        {
+            if(valor > this.saldo)
+            {
+                return false;
+            }
+
+            this.Sacar(valor);
+            contaDestino.Depositar(valor);
+            return true;
+        }
+
 
     }
 
