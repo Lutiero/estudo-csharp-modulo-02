@@ -56,12 +56,11 @@ ContaCorrente conta = new ContaCorrente();
 conta.titular = cliente;
 conta.conta = "1010-1";
 conta.agencia = 1;
-conta.saldo = 100;
 
 Console.WriteLine($"Titular: {conta.titular.nome}");
 Console.WriteLine($"CPF: {conta.titular.cpf}");
 Console.WriteLine($"Profissão: {conta.titular.profissao}");
 Console.WriteLine($"Número da conta: {conta.conta}");
 Console.WriteLine($"Agência: {conta.agencia}");
-Console.WriteLine($"Saldo da conta: {String.Format("{0:0.00}", conta.saldo)}");
+Console.WriteLine($"Saldo da conta: {String.Format("{0:0.00}", conta.GetSaldo())}");
 

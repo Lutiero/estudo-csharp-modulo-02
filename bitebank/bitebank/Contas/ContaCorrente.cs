@@ -12,7 +12,7 @@ namespace bitebank.Contas
         public int agencia;
         public string conta;
         public Cliente titular;
-        public double saldo;
+        private double saldo = 100;
 
         public void Depositar(double valor)
         {
@@ -40,6 +40,11 @@ namespace bitebank.Contas
             Sacar(valor);
             contaDestino.Depositar(valor);
             return true;
+        }
+
+        public double GetSaldo()
+        {
+            return this.saldo;
         }
 
 
