@@ -48,19 +48,20 @@ using bitebank.Titular;
 //Console.WriteLine($"Saldo da conta do Anré pós-transferência: {contaDoAndre.saldo}");
 
 Cliente cliente = new Cliente();
-cliente.nome = "Lutiero";
-cliente.cpf = "000.111.222-33";
-cliente.profissao = "Desenvolvedor";
+cliente.Nome = "Lutiero";
+cliente.Cpf = "000.111.222-33";
+cliente.Profissao = "Desenvolvedor";
 
 ContaCorrente conta = new ContaCorrente();
-conta.titular = cliente;
-conta.conta = "1010-1";
-conta.agencia = 1;
+conta.Titular = cliente;
+conta.Conta = "1010-1";
+conta.Agencia = 1;
 
-Console.WriteLine($"Titular: {conta.titular.nome}");
-Console.WriteLine($"CPF: {conta.titular.cpf}");
-Console.WriteLine($"Profissão: {conta.titular.profissao}");
-Console.WriteLine($"Número da conta: {conta.conta}");
-Console.WriteLine($"Agência: {conta.agencia}");
-Console.WriteLine($"Saldo da conta: {String.Format("{0:0.00}", conta.GetSaldo())}");
+Console.WriteLine($"Titular: {conta.Titular.Nome}");
+Console.WriteLine($"CPF: {conta.Titular.Cpf}");
+Console.WriteLine($"Profissão: {conta.Titular.Profissao}");
+Console.WriteLine($"Número da conta: {conta.Conta}");
+Console.WriteLine($"Agência: {conta.Agencia}");
+conta.Depositar(100);
+Console.WriteLine($"Saldo da conta: {String.Format("{0:0.00}", conta.Saldo)}");
 

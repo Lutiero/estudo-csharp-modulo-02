@@ -9,30 +9,45 @@ namespace bitebank.Contas
 {
     internal class ContaCorrente
     {
-        public int agencia;
-        public string conta;
-        public Cliente titular;
+        private int agencia;
+        private string conta;
+        public Cliente Titular { get; set; }
         private double saldo = 100;
+
+        public int Agencia
+        {
+            get { return agencia; }
+            set { 
+                if(value < 0)
+                {
+                    return;
+                }
+                agencia = value; 
+            }
+        }
+
+        public string Conta{ get; set; }
+        public double Saldo { get; private set; }
 
         public void Depositar(double valor)
         {
-            saldo += valor;
+            Saldo = valor;
         }
 
         public bool Sacar(double valor)
         {
-            if (valor > saldo)
+            if (valor > Saldo)
             {
                 return false;
             }
 
-            saldo -= valor;
+            Saldo -= valor;
             return true;
         }
 
         public bool Transferir(ContaCorrente contaDestino, double valor)
         {
-            if (valor > saldo)
+            if (valor > Saldo)
             {
                 return false;
             }
@@ -41,12 +56,6 @@ namespace bitebank.Contas
             contaDestino.Depositar(valor);
             return true;
         }
-
-        public double GetSaldo()
-        {
-            return this.saldo;
-        }
-
 
     }
 
