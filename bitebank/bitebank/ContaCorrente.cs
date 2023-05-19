@@ -10,7 +10,7 @@ namespace bitebank
     {
         public int agencia;
         public string conta;        
-        public string titular;
+        public Cliente titular;
         public double saldo;
 
         public void Depositar(double valor)
