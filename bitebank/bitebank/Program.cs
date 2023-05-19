@@ -1,4 +1,5 @@
-﻿using bitebank;
+﻿using bitebank.Contas;
+using bitebank.Titular;
 
 
 //ContaCorrente contaDoAndre = new ContaCorrente();

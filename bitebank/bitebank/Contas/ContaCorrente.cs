@@ -3,40 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bitebank.Titular;
 
-namespace bitebank
+namespace bitebank.Contas
 {
     internal class ContaCorrente
     {
         public int agencia;
-        public string conta;        
+        public string conta;
         public Cliente titular;
         public double saldo;
 
         public void Depositar(double valor)
         {
-            this.saldo += valor;
+            saldo += valor;
         }
 
         public bool Sacar(double valor)
         {
-            if (valor > this.saldo)
+            if (valor > saldo)
             {
                 return false;
             }
 
-            this.saldo -= valor;
+            saldo -= valor;
             return true;
         }
 
         public bool Transferir(ContaCorrente contaDestino, double valor)
         {
-            if(valor > this.saldo)
+            if (valor > saldo)
             {
                 return false;
             }
 
-            this.Sacar(valor);
+            Sacar(valor);
             contaDestino.Depositar(valor);
             return true;
         }
