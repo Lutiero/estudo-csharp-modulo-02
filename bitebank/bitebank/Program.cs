@@ -63,12 +63,18 @@ using bitebank.Titular;
 //conta.Depositar(100);
 //Console.WriteLine($"Saldo da conta: {String.Format("{0:0.00}", conta.Saldo)}");
 
-ContaCorrente conta05 = new ContaCorrente(18, "1010-1");
-Console.WriteLine($"Total de contas criadas {ContaCorrente.TotalContaCriadas}");
-ContaCorrente conta06 = new ContaCorrente(18, "1011-1");
-Console.WriteLine($"Total de contas criadas {ContaCorrente.TotalContaCriadas}");
-ContaCorrente conta07 = new ContaCorrente(18, "1012-1");
-Console.WriteLine($"Total de contas criadas {ContaCorrente.TotalContaCriadas}");
+Cliente cliente01 = new Cliente("Joao", "000.111.000-22", "Engenheiro");
+Cliente cliente02 = new Cliente("Maria", "000.222.000-22", "Engenheira");
+Cliente cliente03 = new Cliente("Arnaldo", "000.333.000-22", "Desenvolvedor");
+
+ContaCorrente conta05 = new ContaCorrente(18, "1010-1", cliente01, 200);
+ContaCorrente conta06 = new ContaCorrente(18, "1011-1", cliente02, 300);
+ContaCorrente conta07 = new ContaCorrente(18, "1012-1", cliente03, 400);
+
+
+Console.WriteLine($"TotalContaCriadas: {ContaCorrente.TotalContaCriadas}");
+Console.WriteLine($"TotalDeClientes: {Cliente.TotalDeClientes}");
+;
 
 
 

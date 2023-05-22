@@ -15,10 +15,12 @@ namespace bitebank.Contas
         public Cliente Titular { get; set; }
         private double saldo = 100;
 
-        public ContaCorrente(int agencia, string conta)
+        public ContaCorrente(int agencia, string conta, Cliente cliente, double saldo)
         {
             this.Agencia = agencia;
             this.Conta = conta;
+            this.Titular = cliente;
+            this.Saldo = saldo;
             TotalContaCriadas++;
         }
 
