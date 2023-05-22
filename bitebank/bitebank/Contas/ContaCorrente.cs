@@ -9,15 +9,23 @@ namespace bitebank.Contas
 {
     internal class ContaCorrente
     {
+        public static int TotalContaCriadas { get; private set; }
         private int agencia;
         private string conta;
         public Cliente Titular { get; set; }
         private double saldo = 100;
 
+        public ContaCorrente(int agencia, string conta)
+        {
+            this.Agencia = agencia;
+            this.Conta = conta;
+            TotalContaCriadas++;
+        }
+
         public int Agencia
         {
             get { return agencia; }
-            set { 
+            private set { 
                 if(value < 0)
                 {
                     return;
